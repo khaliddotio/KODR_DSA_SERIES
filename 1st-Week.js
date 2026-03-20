@@ -107,3 +107,41 @@ function circle(radius){
 circle(20)
 
 
+
+// Accept two numbers and print the greatest between them
+function num(a, b){
+ if(a > b){
+    console.log(`${a} is Greater  then ${b}`)
+ }else if(b > a){
+  console.log(`${b} is Greater  then ${a}`)
+ }else{
+     console.log(`${a} is equal to ${b}`)
+ }
+}
+num(0, 1)
+
+
+
+// Accept the gender from the user as char and print the respective greeting message (Ex - Good Morning Sir (on the basis of gender))
+function greetUser(gender) {
+    if (gender == "Male" || gender == "male") {
+        alert(" Good Morning Sir")
+    } else if (gender == "Female" || gender == "female") {
+        alert(" Good Morning Ma'am")
+    }
+}
+greetUser(prompt("Enter Your Gender Here(Male/Female) "))
+
+
+
+// Extend the previous program and handle the wrong inputs. Print Good Morning Sir for input m or M & Good morning Ma'am for input F or f, else print Wrong Input.
+function greetUser(gender) {
+    if (gender == "M" || gender == "m") {
+          alert("Good Morning Sir")
+    } else if (gender == "F" || gender == "f") {
+       alert("Good morning Ma'am")
+    } else {
+        alert("Wrong Input")
+    }
+}
+greetUser(prompt("Enter Your Gender Here(M/F) "))

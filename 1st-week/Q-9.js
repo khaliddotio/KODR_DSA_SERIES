@@ -7,4 +7,4 @@ let area = (Math.sqrt(multi))
 
 console.log(`Area of triangle ${area} `)
 }
-calculateTriangle(9,9,9)
+calculateTriangle(6,6,6)
