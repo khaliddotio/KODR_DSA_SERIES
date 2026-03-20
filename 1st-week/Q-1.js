@@ -1,7 +1,8 @@
 // Sum of two integers
 
-let a = 10;
-let b = 20;
-
-console.log(a + b)
+function int (a , b){
+    let sum = a + b
+   console.log(`The Sum of two integers is = ${sum}`)
+}
+int(10,20)
 
