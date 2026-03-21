@@ -45,9 +45,12 @@ console.log(b)
 
 
 // Accept two numbers from user and swap their values (Part 2 - Swap without using third variable)
-let a = 10 ^ 32;
-let b = 32 ^ 10;
+let a = 10;
+let b = 32;
 
+a = a ^ b
+b = a ^ b
+a = a ^ b
 console.log(a,b)
 
 
@@ -145,3 +148,65 @@ function greetUser(gender) {
     }
 }
 greetUser(prompt("Enter Your Gender Here(M/F) "))
+
+
+
+// Accept an integer and check whether it is an even number or odd.
+function int(a) {
+    if (a % 2 === 0) {
+        alert("Number Is EVEN")
+    } else {
+        alert("Number Is ODD")
+    }
+}
+int(prompt("Enter A number "))
+
+
+
+// Accept name and age from the user. Check if the user is a valid voter or not. (Valid - Hello Shery, You are a valid voter. Invalid - Sorry Shery, you can't cast the vote. Part 2 - Print after how many years the user will be eligible)
+function voter(name, age) {
+    age = Number(age)
+    if (age >= 18) {
+      alert(`Valid - Hello ${name}, You are a valid voter`)
+    }else if(age < 18 ){
+        let yearsLeft = 18 - age
+        alert(`Invalid - Sorry ${name}, you can't cast the vote`,`After ${yearsLeft} years you will be eligible`)
+    }else{
+        alert("Wrong Input")
+    }
+}
+voter(prompt("Enter Your Name = "), prompt("Enter Your Age = "))
+
+
+
+// Accept a day number between 1-7 and print the corresponding day name.
+
+function getDay(num) {
+    num = Number(num)
+    switch (num) {
+        case 1:
+            alert("sunday")
+            break;
+        case 2:
+            alert("Monday")
+            break;
+        case 3:
+            alert("Tuesday")
+            break;
+        case 4:
+            alert("Wednesday")
+            break;
+        case 5:
+            alert("Thursday")
+            break;
+        case 6:
+            alert("Friday")
+            break;
+        case 7:
+            alert("Saturday")
+            break;
+
+            default:alert("Invalid Input")
+    }
+}
+getDay(prompt("Enter a number (1-7):"))
