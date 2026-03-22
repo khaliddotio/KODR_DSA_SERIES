@@ -211,3 +211,149 @@ function getDay(num) {
 }
 getDay(prompt("Enter a number (1-7):"))
 
+
+
+// Accept three numbers and print the greatest among them
+function num(a, b, c) {
+    a = Number(a)
+    b = Number(b)
+    c = Number(c)
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        alert("Invalid Input")
+    } else if (a >= b && a >= c) {
+        alert("A is Greater then B or C")
+    } else if (b >= a && b >= c) {
+        alert("B is Greater then A or C")
+    } else if (c >= a && c >= b) {
+        alert("C is Greater then A or B")
+    } else {
+        alert("All number Are same")
+    }
+}
+num(prompt("Enter a Number A => "), prompt("Enter a Number B => "), prompt("Enter a Number C => "))
+
+
+
+// Accept a year and check if it a leap year or not (google to find out what's a leap year)
+function CheckYear(year) {
+    year = Number(year)
+    if (year % 4 === 0 && year % 100 !== 0) {
+        alert("leap year")
+    } else if (year % 400 == 0) {
+        alert("leap year")
+    } else {
+        alert("Not A leap year")
+    }
+}
+CheckYear(prompt("Enter the year an check, Year is leap year or not "))
+
+
+
+// Shop discount
+function user(amount) {
+    amount = Number(amount)
+    let discount = 0
+    if (isNaN(amount)) {
+        console.log("Invalid Input")
+    } else if (amount < 500) {
+        discount = 0
+    } else if (amount >= 500) {
+        discount = 10
+    } else if (amount >= 1000) {
+        discount = 20
+    } else if (amount >= 2000) {
+        discount = 30
+    }
+    discountAmount = (amount * discount) / 100
+    finalAmount = amount - discountAmount
+    console.log(`Orignal Amount = ${amount}`)
+    console.log(`Discount Persent = ${discount}%`)
+    console.log(`Discount Amount = ${discountAmount}`)
+    console.log(`Final Amount = ${finalAmount}`)
+}
+user(prompt("inter Your Amount "))
+
+
+
+// Bijli Bill
+function user(units) {
+    let Bill = 0
+    units = Number(units)
+    if (isNaN(units)) {
+        return console.log("Invalid Input")
+    } else if (units <= 100) {
+        Bill = units * 5
+
+    } else if (units <= 200) {
+        Bill = 100 * 5 + (units - 100) * 7
+
+    } else if (units <= 300) {
+        Bill = 1000 * 5 + (units - 100) * 7 + (units - 200) * 10
+        
+    } else if (units > 300) {
+        Bill = 100 * 5 + 100 * 7 + 100 * 10 + (units - 300) * 12
+
+    }
+    console.log(`Total Bill Amount ${Bill}`)
+}
+user(prompt("inter Your Bill units "))
+
+
+
+// Accept an English alphabet from user and check if it is a consonant or a vowel.
+function User(alphabet){
+ if((alphabet >= "A" && alphabet <= "Z") || (alphabet >= "a" && alphabet <= "z")){
+    alphabet = alphabet.toLowerCase()
+switch(alphabet){
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+        console.log("It is a vowel")
+        break
+    default:
+        console.log("It is a consonant")
+}
+ }else{
+    console.log("Invalid Input")
+ }
+}
+User(prompt("Enter one Alphabet "))
+
+
+
+// Accept an integer and Print \Hello World\" n times"
+let n = 5;
+for(let i = 1; i <= n ; i++){
+console.log("Hello world")
+}
+
+
+//  Print natural number up to n.
+let n = 10;
+
+for(let i = 0; i <= n; i++){
+  console.log(i)
+}
+
+
+
+// Reverse for loop. Print n to 1.
+let n = 0
+
+for (let i = 10; i >= n; i--) {
+    console.log(i)
+}
+
+
+// Take a number as input and print its table (Ex: 5 * 1 = 5 ... up to 10 terms)
+let n = 3;
+let i = 1
+while (i <= 10) {
+    console.log(n * i)
+    i++
+}
+
+
+
