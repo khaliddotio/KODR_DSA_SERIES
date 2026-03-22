@@ -396,7 +396,68 @@ while(i <= n){
    i++
     console.log(evenSum)
     console.log(oddSum)
+}  
+
+
+
+// Print the sum of all factors of a number (Ex: 50 -> 1 + 2 + 5 + 10 + 25 = 43)
+let n = 50;
+let sum = 0;
+let i = 1;
+while (i < n) {
+    if (n % i == 0) {
+     sum = sum + i
+    }
+    i++
+}
+console.log(sum)
+
+
+
+// Check if the number is Prime or not.
+function isPrime(n){
+    if (n <= 1){
+        return"Not Prime"
+    }
+    for(let i = 2; i * i <= n; i++){
+    if(n % i == 0){
+      return"Not Prime"
+    }
+    }
+  return"Prime";
+}
+console.log(isPrime(17))
+
+
+
+// Write a program to take two inputs a, b & find the value of a raised to the power of b. (Ex - a = 2, b = 5, OP - 2^5 = 32)
+function input(a, b) {
+    let result = 1;
+    for(let i = 1; i <= b; i++){
+     result = result * a
+    }
+    console.log(result)
+}
+input(2,5)
+
+
+
+// Separate each digit of a number and print it on a new line (Ex - 123 -> OP: 3, 2, 1)
+let n = 543;
+while(n > 0){
+ let digit = n % 10
+ console.log(digit)
+ n = Math.floor( n / 10)
 }
 
 
 
+// Sum of digits of a number (Ex: 936 = 18)
+let n = 209;
+let sum = 0;
+while(n > 0){
+    digit = n % 10
+    sum = sum + digit
+    n = Math.floor(n / 10)
+}
+console.log(sum)
