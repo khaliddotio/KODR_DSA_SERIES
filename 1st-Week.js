@@ -210,3 +210,4 @@ function getDay(num) {
     }
 }
 getDay(prompt("Enter a number (1-7):"))
+
