@@ -38,20 +38,28 @@ alert(`Hello ${name}, you are ${age} years old.`)
 
 
 // Solve Increment & decrement operator questions
-let a = 10;
-let b = ++a + a++ + --a;
-console.log(b)
+function num(int){
+    int = Number(int)
+ const solve = ++int + int++ + --int;
+ alert(`${solve}`)
+}
+num(prompt("Enter a Number"))
 
 
 
 // Accept two numbers from user and swap their values (Part 2 - Swap without using third variable)
-let a = 10;
-let b = 32;
-
-a = a ^ b
-b = a ^ b
-a = a ^ b
-console.log(a,b)
+function swap(a, b) {
+    a = Number(a)
+    b = Number(b)
+    if (isNaN(a) || isNaN(b)) {
+        return alert("Invalid Input")
+    }
+    a = a ^ b
+    b = a ^ b
+    a = a ^ b
+    return alert(`${a} ${b}`)
+}
+swap(prompt("Enter A Number Here "), prompt("Enter B Number Here "))
 
 
 
