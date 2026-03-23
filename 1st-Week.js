@@ -17,23 +17,25 @@ add(34,45);
 
 
 // Accept two integers from user and print the sum (Ex - The sum of 45 & 12 = 57)
-let a = prompt("Enter the First Number 👇");
-let b = prompt("Enter the Secound Number 👇");
-
 function add(a , b){
+  a = Number(a)
+  b = Number(b)
   const sum = a + b
   alert(`The Sum of ${a} & ${b} = ${a + b}`)
 }
 
-add(a,b)
-
+add(prompt("Enter the First Number "),prompt("Enter the Secound Number "))
 
 
 // Accept the User's name, age and print in following manner (Ex - Hello Shery, you are 12 years old.)
-let name = prompt("Enter Your Name Here 👇");
-let age = prompt("Enter Your Age Here 👇");
-
-alert(`Hello ${name}, you are ${age} years old.`)
+function user(name, age){
+    age = Number(age)
+    if (isNaN(age)){
+        alert("Invalid Input")
+    }else
+     alert(`Hello ${name}, you are ${age} years old.`)
+}
+user(prompt("Enter Your Name Here "), prompt("Enter Your Age Here "))
 
 
 
@@ -657,3 +659,192 @@ CheckLetter(prompt("Inter One Alphabet An check Is Vowel or Consonent "))
 
 
 
+// Project - Guess Game
+let rendomNum = Math.floor(Math.random() * 100) + 1;
+let guess;
+let attempts = 10;
+do {
+    alert("You have " + attempts + " attempts left ")
+    guess = Number(prompt("Enter a Number "))
+    if (guess > rendomNum) alert("Number Is Too High")
+    else if (guess < rendomNum) alert("Number is too Low")
+    else {
+        alert("Congratulations you gussed the number in " + (10 - attempts) + " attempts");
+        break;
+    }
+    attempts--;
+
+} while (guess !== rendomNum && attempts > 0);
+if (attempts == 0) alert("Sorry you lose the game.The number was" + rendomNum)
+
+
+
+// Project - Restaurant v1.
+let menu;
+let grandTotale = 0;
+do {
+   menu = parseInt(prompt(
+    "Menu Book:\n"+
+    "1. Pizza- 200\n"+
+    "2. Burger- 100\n"+
+    "3. Pasta- 150\n"+
+    "4. Sandwich- 60\n"+
+    "5. Exit\n"+
+    "Enter your choice: "
+   ));
+   if(menu >= 1 && menu <= 4){
+    let quantity =  parseFloat(prompt("Enter Quantity: "));
+    let totalAmount = 0;
+    let price = 0;
+     switch (menu) {
+        case 1:
+            price = 200;
+            alert("Thank you for Ordering Pizza")
+            break;
+           case 2:
+            price = 100;
+            alert("Thank you for Ordering Burger")
+            break;
+           case 3:
+            price = 150;
+            alert("Thank you for Ordering Pasta")
+            break;
+           case 4:
+            price = 60;
+            alert("Thank you for Ordering Sandwich")
+            break;        
+     }
+
+     totalAmount = price * quantity;
+     grandTotale += amount;
+     alert("Amount " + amount);
+
+   }else if(menu === 5){
+    alert("Total Bill = " + grandTotale + "\nThank You Visit Again!" )
+   }else{
+    alert("Invalid Choice")
+   }
+} while (menu !== 5);
+
+
+
+// Right Triangle - Star Pattern
+let n = 5;
+for (let i = 1; i <= n; i++) {
+    let row ="";
+    for (let j = 1; j <= i; j++) {
+     row += "*";
+    }
+    console.log(row)
+}
+
+
+
+// Right Triangle - Number Pattern
+let n = 5
+for(let i = 1; i <= n; i++){
+ let num = "";
+ for(let j = 1; j <= i; j++){
+ num += j;
+ }
+ console.log(num)
+}
+
+
+
+// Right Triangle - Alphabet Pattern
+let n = 5;
+
+for(let i = 1; i <= n; i++ ){
+    let int = "";
+    for(let j = 1; j <= i; j++){
+     int += String.fromCharCode(64 + j);
+    }
+    console.log(int)
+}
+
+
+
+// Inverted Right Triangle Pattern
+let n = 5;
+
+for(let i = 1; i <= n; i++){
+    let row = "";
+     for(let j = 1; j <= n - i + 1; j++ ){
+      row += "*";
+     }
+     console.log(row)
+}
+
+
+
+// Mirrored Right Triangle Pattern
+let n = 5;
+
+for(let i = 1; i <= n ; i++){
+    let row = "";
+
+    for(let j = 1; j <= n - i; j++){
+      row += " ";
+    }
+    
+    for(let k = 1; k <= i; k++){
+      row += "*";
+    }
+    console.log(row)
+}
+
+
+
+// Triangle Pattern
+let n = 5;
+
+for(let i = 1; i <= n; i++){
+    let row = "";
+    for(let j = 1; j <= n - i; j++){
+     row += " ";
+    }
+    for(let k = 1; k <= 2 * i - 1; k++){
+      row += "*";
+    }
+  console.log(row)
+
+}
+
+
+
+// V Pattern
+let n = 5;
+
+for(let i = 1; i <= n; i++){
+    let row = "";
+
+    for(let j = 1; j < i; j++){
+     row += " ";
+    }
+    row += "*";
+    for(let k = 1; k <= 2 * (n - i) - 1; k++){
+      row += " ";
+    }
+    if(i != n){
+      row += "*";
+    }
+  console.log(row)
+
+}
+
+
+
+// X Pattern
+let n = 5;
+for(let i = 1; i <= n; i++){
+  let row = "";
+  for(let j = 1; j <= n; j++){
+   if (i == j || i + j == n + 1) {
+    row += "*";
+   } else {
+    row += " ";
+   }
+  }
+ console.log(row)
+}
