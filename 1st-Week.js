@@ -476,3 +476,176 @@ console.log(rev)
 
 
 
+// Accept a number and check if it is a palindromic number (If number and its reverse are equal, Ex: 12321 - Reverse - 12321)
+let n = 775653;
+let orig = n;
+rev = 0
+while(n > 0){
+ digit = n % 10
+ rev = rev * 10 + digit
+ n = Math.floor(n / 10)
+}if(orig == rev){
+ console.log("Palindrome ")
+}else{
+    console.log("Not Palindrome")
+}
+
+
+
+// Accept a number and check if it is a strong number or not (Sum of factorial of each digit, Ex: 145 = 1! + 4! + 5! = 145)
+function isStrongNumber(n) {
+    let orig = n;
+    let sum = 0;
+
+    while (n > 0) {
+        let digit = n % 10;
+        let fact = 1;
+
+        for (let i = 1; i <= digit; i++) {
+            fact = fact * i;
+        }
+        sum = sum + fact;
+        n = Math.floor(n / 10);
+    }
+    if (sum === orig) {
+        console.log("Strong Number");
+    } else {
+        console.log("Not Strong Number");
+    }
+}
+isStrongNumber(145);
+
+
+
+// Automorphic number (Ex: 5 = 25 = 625 = 390625, 6=36, 76 = 5776)
+function isAutomorphic(num){
+let sque = num * num;
+let temp = num;
+while(temp > 0){
+    if(temp % 10 != sque % 10){
+         console.log("Not Automorphic")
+         return
+    }
+    temp = Math.floor(temp / 10);
+    sque = Math.floor(sque / 10);
+}
+console.log("Automorphic")
+}
+isAutomorphic(76)
+
+
+
+// Print \hello\" until user gives wrong input using do while
+let choice;
+    do {
+        console.log("Hello")
+        choice = prompt("Enter y to continue, any other key to stop")
+    } while (choice == "y");
+
+
+
+// Make a choice based calculator using do while
+let choice;
+do {
+    choice = parseInt(prompt(
+        "Calculator Menu:\n" +
+        "1. Addition\n" +
+        "2. Subtraction\n" +
+        "3. Multiplication\n" +
+        "4. Division\n" +
+        "5. Exit\n" +
+        "Enter your choice:"
+    ));
+    if (choice >= 1 && choice <= 4) {
+        let num1 = parseFloat(prompt("Enter first number:"));
+        let num2 = parseFloat(prompt("Enter second number:"));
+        let result;
+
+        switch (choice) {
+            case 1:
+                result = num1 + num2;
+                alert("Result = " + result);
+                break;
+            case 2:
+                result = num1 - num2;
+                alert("Result = " + result);
+                break;
+            case 3:
+                result = num1 * num2;
+                alert("Result = " + result);
+                break;
+            case 4:
+                result = num1 / num2;
+                alert("Result = " + result);
+                break;
+        }
+    } else if (choice === 5) {
+        alert("Calculator closed.");
+    } else {
+        alert("Invalid choice");
+    }
+} while (choice !== 5);
+
+
+
+// Print Weekday using Switch
+function Weekday(day) {
+    switch (day) {
+        case 1:
+            console.log("Sunday")
+            break;
+        case 2:
+            console.log("Monday")
+            break;
+        case 3:
+            console.log("Tuesday")
+            break;
+        case 4:
+            console.log("Wednesday")
+            break;
+        case 5:
+            console.log("Thursday")
+            break;
+        case 6:
+            console.log("Friday")
+            break;
+        case 7:
+            console.log("Saturday")
+            break;
+        default:
+            console.log("Invalid Input")
+            break;
+    }
+}
+Weekday(parseInt(prompt("Enter The Number Between 1 To 7 ")))
+
+
+
+// Question 22 using Switch (Check Consonant or Vowel using Switch)
+function CheckLetter(letter){
+
+    switch (letter.toLowerCase()) {
+        case "a":
+            console.log("Vowel");
+            break;
+         case "e":
+            console.log("Vowel");
+            break;
+         case "i":
+            console.log("Vowel");
+            break;
+         case "o":
+            console.log("Vowel");
+            break;
+         case "u":
+            console.log("Vowel");
+            break;
+        default:
+            console.log("Consonant");
+            break;
+    }
+}
+CheckLetter(prompt("Inter One Alphabet An check Is Vowel or Consonent "))
+
+
+
