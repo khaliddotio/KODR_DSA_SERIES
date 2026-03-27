@@ -41,3 +41,32 @@ for(let i =0; i < arr.length; i++){
    }
 }
 console.log(secMax)
+
+
+
+
+// Check if array is sorted in increasing order or not. (Ex 1 - { 1, 5, 8, 9, 10, 15 } - OP = \\YES\\"
+let arr = [1, 5, 8, 9, 10, 15];
+for(let i = 1; i < arr.length; i++){
+  if(arr[i] < arr[i - 1]){
+   console.log("No")
+   return
+  }
+}
+console.log("Yes")
+
+
+// Take n integer inputs from user and store them in an array. Now, copy all the elements into another array in reverse order and print it.
+
+let prompt = require("prompt-sync")()
+let n = +prompt("Enter the length of Array: ")
+let arr = [];
+for(let i = 0; i < n; i++){
+ arr[i] = +prompt(`Element ${i + 1}: `)
+}
+let temp = new arr
+for(let i = 0; i < n; i++){
+  temp[i] = arr( n - 1 - i )
+}
+console.log(arr)
+console.log(temp)
