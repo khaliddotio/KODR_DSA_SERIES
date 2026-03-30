@@ -1,8 +1,9 @@
 // Array left Rotation by 1
 
 let arr = [1, 2, 3, 4, 5];
-let n = arr.length
-for(let i = 0; i < n ; i++){
-   arr[i] = arr(i - 1  + n )%n
+let first = arr[0]
+for(let i = 0; i < arr.length ; i++){
+   arr[i] = arr[i + 1];
 }
-console.log(arr)
+arr[arr.length - 1] = first
+console.log(arr) 
