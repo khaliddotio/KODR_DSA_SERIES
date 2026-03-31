@@ -81,3 +81,18 @@ for(let i = 0; i < arr.length ; i++){
 }
 arr[arr.length - 1] = first
 console.log(arr) 
+
+
+
+// Array Reverse Without Using Extra space
+let arr = [10, 20, 30, 40, 50, 60];
+let i = 0;
+let j = arr.length-1
+while(i < j){
+   let temp = arr[i];
+   arr[i] = arr[j];
+   arr[j] = temp;
+   i++
+   j--
+}
+console.log(arr)
