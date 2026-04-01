@@ -203,3 +203,6 @@ if (isStrongNum(number)) {
 } else {
    console.log("Not a strongr number")
 }
+
+
+
