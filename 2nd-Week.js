@@ -242,3 +242,42 @@ for (let i = 0; i < n * arr.length; i++) {
    result.push(arr[i % arr.length]);
 }
 console.log(result)
+
+
+
+// Build Array from Permutation
+
+let arr = [1, 4, 0, 3, 2, 5];
+let num = []
+
+for(let i = 0; i < arr.length; i++){
+  num[i] = arr[arr[i]]
+}
+console.log(num)
+
+// function Barray(num){
+//     let n = num.length;
+//     for(let i = 0; i < n ; i++){
+//        num[i] = num[i] + n *(num[num[i]] % n)
+//     }
+// for(let i = 0; i < n; i++){
+// num[i] =  Math.floor(num[i] / n)
+// }
+// return num
+// }
+// let arr = [1, 4, 0, 3, 2, 5];
+// console.log(Barray(arr))
+
+
+
+// Given a sorted array of distinct elements, find the summation of absolute differences of all pairs in the given array. (Ex: arr[] = {1, 2, 3, 4}, Output: 10)
+let arr = [1, 2, 3, 4];
+let sum = 0;
+let n = arr.length;
+
+for(let i = 0; i < n; i++){
+ let count = arr[i] * (2*i - n + 1)
+ sum += count;
+}
+
+console.log(sum)
