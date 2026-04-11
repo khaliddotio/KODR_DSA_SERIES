@@ -327,3 +327,17 @@ for(let i = n / 2; i < n; i++){
 }
 diff = Math.abs(leftSum - rightSum)
 console.log(diff)
+
+
+
+// Sort First half in Ascending and Second half in descending order in an array
+let arr = [4, 2, 3, 1, 6, 8, 5, 7]
+let n = arr.length
+let mid = Math.floor( n / 2)
+let first = arr.slice(0, mid)
+let last = arr.slice(mid, n)
+first.sort((a, b), a + b)
+last.sort((a, b), b - a)
+
+let result = [...first , ...last]
+console.log(result)
