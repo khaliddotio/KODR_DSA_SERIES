@@ -307,9 +307,51 @@ console.log(minSum(arr, charArr))
 
 
 
+// Given an array of integers, update every element with the multiplication of previous and next elements with the following exceptions: a) The First element is replaced by the multiplication of the first and second. b) The last element is replaced by multiplication of the last and second last. (Ex: Input : arr[] = {2, 3, 4, 5, 6}, Output : arr[] = {6, 8, 15, 24, 30})
+let arr = [2, 4, 6, 7, 3, 4]
+let n = arr.length
+let prev = arr[0]
+arr[0] = arr[0] * arr[1]
+
+for (let i = 1; i < n - 1; i++) {
+    let curr = arr[i]
+    arr[i] = prev * arr[i + 1]
+    prev = curr
+}
+arr[n - 1] = prev * arr[n - 1]
+console.log(arr)
 
 
 
+
+// We are given an array of Integers. We have to perform the following operation on the array until it is fully exhausted: Select the max number in the array and delete that number including all the numbers to its right side in the array. Repeat this step for the left elements of the array i.e select the maximum element in the left elements and delete it including all numbers to its right. Our task is to simulate the above procedure and return the number of steps that will be taken until the first element (index 0) of the array is also deleted and the array is exhausted. (Ex: Array = [2, 3, 5, 4, 1], Output : Steps Taken: 3)
+
+// 1st Approch
+
+// let arr = [2, 3, 5, 4, 1]
+// let step = 0
+// while (arr.length > 0) {
+//     let max = Math.max(...arr)
+//     let maxind = arr.indexOf(max)
+//     arr =arr.slice(0, maxind)
+//     step++
+// } 
+// console.log(step)
+
+
+// 2nd Approch
+
+let arr = [2, 3, 5, 4, 1]
+let n = arr.length 
+let step = 0
+let maxSoFar = -Infinity
+for(let i = n-1; i >= 0; i--){
+   if(arr[i] > maxSoFar){
+    step++
+       maxSoFar = arr[i]
+   }
+}
+console.log(step)
 
 
 
@@ -341,3 +383,19 @@ last.sort((a, b), b - a)
 
 let result = [...first , ...last]
 console.log(result)
+
+
+
+// Divide Array Into Equal Pairs
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let set = new Set()
+
+for( let num of arr){
+   if(set.hast(num)){
+      set.delete(num);
+   }else{
+      set.add(num);
+   }
+}
+console.log(set.size === 0);
