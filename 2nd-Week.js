@@ -380,14 +380,13 @@ let first = arr.slice(0, mid)
 let last = arr.slice(mid, n)
 first.sort((a, b), a + b)
 last.sort((a, b), b - a)
-
 let result = [...first , ...last]
 console.log(result)
 
 
 
-// Divide Array Into Equal Pairs
 
+// Divide Array Into Equal Pairs
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let set = new Set()
 
@@ -403,7 +402,6 @@ console.log(set.size === 0);
 
 
 // Maximum Number of Pairs in Array
-
 let arr = [1, 2, 4, 3, 2, 1, 3, 4 , 3, 1,];
 let set = new Set();
 let pairs = 0;
@@ -417,3 +415,42 @@ for(let num of arr){
 }
 let freq = set.size
 console.log(pairs, freq)
+
+
+
+// Count Equal and Divisible Pairs in an Array
+let arr = [1, 2, 4, 3, 2, 1, 3, 4 , 3, 1,];
+let k = 2;
+let count = 0;
+for(let i = 0; i < arr.length; i++){
+ for(let j = i + 1; j < arr.length; j++){
+  if(arr[i] == arr[j] && (i * j) % k === 0){
+   count++
+  }
+ }
+}
+console.log(count)
+
+
+
+// Keep Multiplying Found Values by Two
+let arr = [1, 2, 3, 5, 6, 8, 9];
+let result = [];
+
+for(let num of arr){
+   result.push(num * 2)
+}
+console.log(result)
+
+
+
+// Smallest Index With Equal Value
+let arr = [0, 2, 3, 5, 6, 8, 9];
+let result = -1;
+for(let i = 0; i < arr.length; i++){
+   if(i % 10 === arr[i]){
+      result = i;
+      break;
+   }
+}
+console.log(result)
