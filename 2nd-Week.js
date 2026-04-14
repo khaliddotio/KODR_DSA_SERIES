@@ -578,3 +578,58 @@ while (arr.length > 1) {
    arr = temp;
 }
 console.log(arr[0])
+
+
+
+// Minimum Number of Seat Everyone
+let arr = [1, 1, -1, 1, -1, 1];
+let current = 0;
+let max = 0;
+for(let i = 0; i < arr.length; i++){
+  current += arr[i];
+  max = Math.max(max, current)
+}
+console.log(max)
+
+
+
+// Matrix Diagonal Sum
+let matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+let n = matrix.length;
+let sum = 0;
+for(let i = 0; i < n; i++){
+sum += matrix[i][i];
+sum += matrix[i][n - 1 - i]
+}
+if(n % 2 === 1){
+sum -= matrix[Math.floor(n / 2)][Math.floor(n / 2)]
+}
+console.log(sum)
+
+
+
+// Transpose Matrix
+let matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+let n = matrix.length
+
+for (let i = 0; i < array.length; i++) {
+   for(let j = i + 1; j < n; j++){
+   let temp = matrix[i][j];
+   matrix[i][j] = matrix[j][i]
+   matrix[j][i] = temp;
+   }  
+}
+console.log(matrix)
+
+
+
+// Flipping an image
+let image = [[1, 0, 0],[0, 1, 0],[1, 1, 1]];
+for(let i = 0; i < image.length; i++){
+   let row = image[i]
+   row.reverse();
+   for(let j = 0; j < row.length; j++){
+    row[j] = 1 - row[j]
+   }
+}
+console.log(image)
