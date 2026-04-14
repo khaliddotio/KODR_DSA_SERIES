@@ -314,9 +314,9 @@ let prev = arr[0]
 arr[0] = arr[0] * arr[1]
 
 for (let i = 1; i < n - 1; i++) {
-    let curr = arr[i]
-    arr[i] = prev * arr[i + 1]
-    prev = curr
+   let curr = arr[i]
+   arr[i] = prev * arr[i + 1]
+   prev = curr
 }
 arr[n - 1] = prev * arr[n - 1]
 console.log(arr)
@@ -342,13 +342,13 @@ console.log(arr)
 // 2nd Approch
 
 let arr = [2, 3, 5, 4, 1]
-let n = arr.length 
+let n = arr.length
 let step = 0
 let maxSoFar = -Infinity
-for(let i = n-1; i >= 0; i--){
-   if(arr[i] > maxSoFar){
-    step++
-       maxSoFar = arr[i]
+for (let i = n - 1; i >= 0; i--) {
+   if (arr[i] > maxSoFar) {
+      step++
+      maxSoFar = arr[i]
    }
 }
 console.log(step)
@@ -361,11 +361,11 @@ let arr = [1, 2, 1, 2, 1, 3]
 let n = arr.length
 let leftSum = 0
 let rightSum = 0
-for(let i = 0; i < n / 2; i++){
+for (let i = 0; i < n / 2; i++) {
    leftSum += arr[i]
 }
-for(let i = n / 2; i < n; i++){
-  rightSum += arr[i]
+for (let i = n / 2; i < n; i++) {
+   rightSum += arr[i]
 }
 diff = Math.abs(leftSum - rightSum)
 console.log(diff)
@@ -375,12 +375,12 @@ console.log(diff)
 // Sort First half in Ascending and Second half in descending order in an array
 let arr = [4, 2, 3, 1, 6, 8, 5, 7]
 let n = arr.length
-let mid = Math.floor( n / 2)
+let mid = Math.floor(n / 2)
 let first = arr.slice(0, mid)
 let last = arr.slice(mid, n)
 first.sort((a, b), a + b)
 last.sort((a, b), b - a)
-let result = [...first , ...last]
+let result = [...first, ...last]
 console.log(result)
 
 
@@ -389,10 +389,10 @@ console.log(result)
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let set = new Set()
 
-for( let num of arr){
-   if(set.hast(num)){
+for (let num of arr) {
+   if (set.hast(num)) {
       set.delete(num);
-   }else{
+   } else {
       set.add(num);
    }
 }
@@ -401,16 +401,16 @@ console.log(set.size === 0);
 
 
 // Maximum Number of Pairs in Array
-let arr = [1, 2, 4, 3, 2, 1, 3, 4 , 3, 1,];
+let arr = [1, 2, 4, 3, 2, 1, 3, 4, 3, 1,];
 let set = new Set();
 let pairs = 0;
-for(let num of arr){
-  if(set.has(num)){
-     set.delete(num);
-     pairs++
-  }else{
-   set.add(num);
-  }
+for (let num of arr) {
+   if (set.has(num)) {
+      set.delete(num);
+      pairs++
+   } else {
+      set.add(num);
+   }
 }
 let freq = set.size
 console.log(pairs, freq)
@@ -418,15 +418,15 @@ console.log(pairs, freq)
 
 
 // Count Equal and Divisible Pairs in an Array
-let arr = [1, 2, 4, 3, 2, 1, 3, 4 , 3, 1,];
+let arr = [1, 2, 4, 3, 2, 1, 3, 4, 3, 1,];
 let k = 2;
 let count = 0;
-for(let i = 0; i < arr.length; i++){
- for(let j = i + 1; j < arr.length; j++){
-  if(arr[i] == arr[j] && (i * j) % k === 0){
-   count++
-  }
- }
+for (let i = 0; i < arr.length; i++) {
+   for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] == arr[j] && (i * j) % k === 0) {
+         count++
+      }
+   }
 }
 console.log(count)
 
@@ -436,7 +436,7 @@ console.log(count)
 let arr = [1, 2, 3, 5, 6, 8, 9];
 let result = [];
 
-for(let num of arr){
+for (let num of arr) {
    result.push(num * 2)
 }
 console.log(result)
@@ -446,8 +446,8 @@ console.log(result)
 // Smallest Index With Equal Value
 let arr = [0, 2, 3, 5, 6, 8, 9];
 let result = -1;
-for(let i = 0; i < arr.length; i++){
-   if(i % 10 === arr[i]){
+for (let i = 0; i < arr.length; i++) {
+   if (i % 10 === arr[i]) {
       result = i;
       break;
    }
@@ -475,13 +475,13 @@ console.log(set.size);
 let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let count = 0;
 let prev = arr[0];
-for(let i = 1; i < arr.length - 1;  i++){
-   if(ar[i] === arr[i + 1])continue;
+for (let i = 1; i < arr.length - 1; i++) {
+   if (ar[i] === arr[i + 1]) continue;
 
-   if(
+   if (
       (arr[i] > prev && arr[i] > arr[i + 1]) ||
       (arr[i] < prev && arr[i] > arr[i + 1])
-   ){
+   ) {
       count++
    }
    prev = arr[i];
@@ -492,15 +492,15 @@ console.log(count)
 
 // Find Greatest Common Divisor of Array
 let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-function num(a, b){
-   while(b !== 0){
-     let temp = b;
-     b = a % b;
-     a = temp;
+function num(a, b) {
+   while (b !== 0) {
+      let temp = b;
+      b = a % b;
+      a = temp;
    }
    return a
 }
-let min =  Math.min(...arr);
+let min = Math.min(...arr);
 let max = Math.max(...arr);
 let result = num(min, max);
 console.log(result);
@@ -511,24 +511,70 @@ console.log(result);
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let currentAltitude = 0;
 let maxAltitude = 0;
-for(let i = 0; i < arr.length; i++){
+for (let i = 0; i < arr.length; i++) {
    currentAltitude += arr[i];
    maxAltitude = Math.max(maxAltitude, currentAltitude);
 }
-console.log(maxAltitude);\
+console.log(maxAltitude); \
 
 
 
 // Minimum Sum of Four Digit Number After Splitting Digits
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-arr.sort((a, b)=> a - b);
+arr.sort((a, b) => a - b);
 let num1 = 0;
 let num2 = 0;
-for(let i = 0; i < arr.length; i++){
-   if(i % 2 === 0){
+for (let i = 0; i < arr.length; i++) {
+   if (i % 2 === 0) {
       num1 = num1 * 10 + arr[i];
-   }else{
+   } else {
       num2 = num2 * 10 + arr[i];
    }
 }
 console.log(num1 + num2);
+
+
+
+// Sort Even and Odd Indices Independently
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let even = 0;
+let odd = 0;
+for (let i = 0; i < arr.length; i++) {
+   if (i % 2 === 0) {
+      even.push(arr[i]);
+   } else {
+      odd.push(arr[i]);
+   }
+}
+
+even.sort((a, b) => a - b);
+odd.sort((a, b) => b - a);
+
+let o = 0, e = 0
+
+for (let i = 0; i < arr.length; i++) {
+   if (i % 2 === 0) {
+      arr[i] = even[e++];
+   } else {
+      arr[i] = odd[o++]
+   }
+}
+console.log(arr)
+
+
+
+// Min Max Game - Array
+let arr = [1, 3, 5, 2, 4, 8, 2, 2];
+while (arr.length > 1) {
+   let temp = [];
+   for (let i = 0; i < arr.length; i += 2) {
+      let pairIndex = i / 2;
+      if (pairIndex % 2 === 0) {
+         temp.push(Math.min(arr[i], arr[i + 1]))
+      } else {
+         temp.push(Math.max(arr[i], arr[i + 1]))
+      }
+   }
+   arr = temp;
+}
+console.log(arr[0])
